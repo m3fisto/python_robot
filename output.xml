@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0.2 (Python 3.11.3 on darwin)" generated="20230419 17:26:03.173" rpa="false" schemaversion="3">
+<suite id="s1" name="Homepage" source="/Users/parismalakounidis/Desktop/projects/robot-python/homepage.robot">
+<kw name="Run Keywords" library="BuiltIn" type="SETUP">
+<arg>Configure Selenium</arg>
+<arg>Navigate To Homepage</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<kw name="Configure Selenium" library="system">
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<arg>.5 Seconds</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20230419 17:26:03.536" endtime="20230419 17:26:03.537"/>
+</kw>
+<status status="PASS" starttime="20230419 17:26:03.536" endtime="20230419 17:26:03.537"/>
+</kw>
+<kw name="Navigate To Homepage" library="system">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${SiteUrl}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230419 17:26:03.538" level="INFO">Opening browser 'Chrome' to base url 'http://localhost:8080'.</msg>
+<status status="PASS" starttime="20230419 17:26:03.537" endtime="20230419 17:26:08.128"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230419 17:26:08.128" endtime="20230419 17:26:09.101"/>
+</kw>
+<status status="PASS" starttime="20230419 17:26:03.537" endtime="20230419 17:26:09.101"/>
+</kw>
+<status status="PASS" starttime="20230419 17:26:03.535" endtime="20230419 17:26:09.101"/>
+</kw>
+<test id="s1-t1" name="Check homepage" line="15">
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>xpath://title[contains(text(),'Home')]</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20230419 17:26:12.679" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-10.png"&gt;&lt;img src="selenium-screenshot-10.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20230419 17:26:12.679" level="FAIL">Page should have contained text 'xpath://title[contains(text(),'Home')]' but did not.</msg>
+<status status="FAIL" starttime="20230419 17:26:09.102" endtime="20230419 17:26:12.688"/>
+</kw>
+<status status="FAIL" starttime="20230419 17:26:09.101" endtime="20230419 17:26:12.689">Page should have contained text 'xpath://title[contains(text(),'Home')]' but did not.</status>
+</test>
+<test id="s1-t2" name="Open Menu" line="18">
+<kw name="Navigate To Menu" library="navigation">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>css: [div&gt;nav&gt;a[href="#"]]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230419 17:26:12.694" level="INFO">Clicking element 'css: [div&gt;nav&gt;a[href="#"]]'.</msg>
+<msg timestamp="20230419 17:26:14.168" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-11.png"&gt;&lt;img src="selenium-screenshot-11.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20230419 17:26:14.168" level="FAIL">InvalidSelectorException: Message: invalid selector: An invalid or illegal selector was specified
+  (Session info: chrome=112.0.5615.121)
+Stacktrace:
+0   chromedriver                        0x0000000102a22ae8 chromedriver + 4958952
+1   chromedriver                        0x0000000102a1a7b3 chromedriver + 4925363
+2   chromedriver                        0x00000001025dc1d6 chromedriver + 475606
+3   chromedriver                        0x00000001025e0274 chromedriver + 492148
+4   chromedriver                        0x00000001025dfe56 chromedriver + 491094
+5   chromedriver                        0x00000001025e02fc chromedriver + 492284
+6   chromedriver                        0x000000010261f63c chromedriver + 751164
+7   chromedriver                        0x000000010261fc81 chromedriver + 752769
+8   chromedriver                        0x0000000102663fa1 chromedriver + 1032097
+9   chromedriver                        0x0000000102645c3d chromedriver + 908349
+10  chromedriver                        0x000000010266125b chromedriver + 1020507
+11  chromedriver                        0x00000001026459e3 chromedriver + 907747
+12  chromedriver                        0x000000010260faef chromedriver + 686831
+13  chromedriver                        0x000000010261100e chromedriver + 692238
+14  chromedriver                        0x00000001029de9ad chromedriver + 4680109
+15  chromedriver                        0x00000001029e3c12 chromedriver + 4701202
+16  chromedriver                        0x00000001029ea79f chromedriver + 4728735
+17  chromedriver                        0x00000001029e4b7a chromedriver + 4705146
+18  chromedriver                        0x00000001029b727e chromedriver + 4518526
+19  chromedriver                        0x0000000102a04908 chromedriver + 4835592
+20  chromedriver                        0x0000000102a04a87 chromedriver + 4835975
+21  chromedriver                        0x0000000102a1400f chromedriver + 4898831
+22  libsystem_pthread.dylib             0x00007ff8047ee259 _pthread_start + 125
+23  libsystem_pthread.dylib             0x00007ff8047e9c7b thread_start + 15
+</msg>
+<status status="FAIL" starttime="20230419 17:26:12.692" endtime="20230419 17:26:14.178"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>css: [a[href="index-3.html"]]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20230419 17:26:14.178" endtime="20230419 17:26:14.178"/>
+</kw>
+<status status="FAIL" starttime="20230419 17:26:12.692" endtime="20230419 17:26:14.179"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>xpath://title[contains(text(),'Menu')]</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="NOT RUN" starttime="20230419 17:26:14.179" endtime="20230419 17:26:14.179"/>
+</kw>
+<status status="FAIL" starttime="20230419 17:26:12.690" endtime="20230419 17:26:14.179">InvalidSelectorException: Message: invalid selector: An invalid or illegal selector was specified
+  (Session info: chrome=112.0.5615.121)
+Stacktrace:
+0   chromedriver                        0x0000000102a22ae8 chromedriver + 4958952
+1   chromedriver                        0x0000000102a1a7b3 chromedriver + 4925363
+2   chromedriver                        0x00000001025dc1d6 chromedriver + 475606
+3   chromedriver                        0x00000001025e0274 chromedriver + 492148
+4   chromedriver                        0x00000001025dfe56 chromedriver + 491094
+5   chromedriver                        0x00000001025e02fc chromedriver + 492284
+6   chromedriver                        0x000000010261f63c chromedriver + 751164
+7   chromedriver                        0x000000010261fc81 chromedriver + 752769
+    [ Message content over the limit has been removed. ]
+...hromedriver                        0x000000010261100e chromedriver + 692238
+14  chromedriver                        0x00000001029de9ad chromedriver + 4680109
+15  chromedriver                        0x00000001029e3c12 chromedriver + 4701202
+16  chromedriver                        0x00000001029ea79f chromedriver + 4728735
+17  chromedriver                        0x00000001029e4b7a chromedriver + 4705146
+18  chromedriver                        0x00000001029b727e chromedriver + 4518526
+19  chromedriver                        0x0000000102a04908 chromedriver + 4835592
+20  chromedriver                        0x0000000102a04a87 chromedriver + 4835975
+21  chromedriver                        0x0000000102a1400f chromedriver + 4898831
+22  libsystem_pthread.dylib             0x00007ff8047ee259 _pthread_start + 125
+23  libsystem_pthread.dylib             0x00007ff8047e9c7b thread_start + 15</status>
+</test>
+<kw name="Exit Selenium" library="system" type="TEARDOWN">
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20230419 17:26:15.821" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-12.png"&gt;&lt;img src="selenium-screenshot-12.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20230419 17:26:14.181" endtime="20230419 17:26:15.822"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230419 17:26:15.822" endtime="20230419 17:26:16.395"/>
+</kw>
+<status status="PASS" starttime="20230419 17:26:14.181" endtime="20230419 17:26:16.396"/>
+</kw>
+<status status="FAIL" starttime="20230419 17:26:03.177" endtime="20230419 17:26:16.396"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="2" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="2" skip="0" id="s1" name="Homepage">Homepage</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
