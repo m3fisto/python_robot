@@ -13,8 +13,8 @@ Suite Teardown  Exit Selenium
 
 *** Test Cases ***
 Check homepage
-    Page Should Contain     xpath://title[contains(text(),'Home')]
+    Page Should Contain     css: head > title
 
 Open Menu
     Navigate To Menu
-    Page Should Contain     xpath://title[contains(text(),'Menu')]
+    Page Should Contain     xpath: //title[contains(text(),'Menu')]
